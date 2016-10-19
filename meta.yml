@@ -1,0 +1,6 @@
+Name: Rex::Ndenv::Base
+Description: Base module to install ndenv and node-build
+Author: Paul Williams <kwakwa@cpan.org>
+License: Apache 2.0
+Require:
+  - Rex::Ext::ParamLookup
