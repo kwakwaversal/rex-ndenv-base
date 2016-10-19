@@ -1,6 +1,6 @@
 #
 # AUTHOR: Paul Williams <kwakwa@cpan.org>
-# REQUIRES: build-essential, git
+# REQUIRES: git
 # LICENSE: Apache License 2.0
 #
 # A Rex module to install ndenv and build node on your Server.
@@ -19,7 +19,7 @@ our %version_map = (
 
 # The prepare task needs root privileges. Run as root.
 task prepare => make {
-  pkg [qw/build-essential git/], ensure => "latest";
+  pkg [qw/git/], ensure => "latest";
 };
 
 task setup => make {
