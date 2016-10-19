@@ -2,3 +2,4 @@
 
 0.01  2016-10-19
   - First release.
+  - Replace plenv commands with ndenv equivalents.
