@@ -1,6 +1,6 @@
 #
 # AUTHOR: Paul Williams <kwakwa@cpan.org>
-# REQUIRES: git
+# REQUIRES: curl, git
 # LICENSE: Apache License 2.0
 #
 # A Rex module to install ndenv and build node on your Server.
@@ -19,7 +19,7 @@ our %version_map = (
 
 # The prepare task needs root privileges. Run as root.
 task prepare => make {
-  pkg [qw/git/], ensure => "latest";
+  pkg [qw/curl git/], ensure => "latest";
 };
 
 task setup => make {
@@ -67,7 +67,7 @@ task setup => make {
   # Install node!
   run "ndenv versions |grep $node_version";    # this is probably a bug
   if ($? == 0) {
-    Rex::Logger::info "perl-$node_version has already been installed";
+    Rex::Logger::info "node-$node_version has already been installed";
   }
   else {
     run "ndenv install $node_version";
